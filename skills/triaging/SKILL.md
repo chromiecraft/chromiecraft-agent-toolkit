@@ -61,6 +61,7 @@ These are the tools the agent is **expected to have** and is **expected to use**
 | **Web search / fetch** | Wowhead (TBC + current), Wowpedia (pre-Cata history), Wayback Machine, YouTube — always weighed per `references/source-quality.md`. |
 | **AzerothCore DB (MCP)** | World DB queries (`creature_template`, `quest_template`, `gameobject_template`, `smart_scripts`, `conditions`, `spell_dbc`, …). The highest-value evidence whenever a verdict hinges on server data. |
 | **AzerothCore source code** | Read/grep the AC C++ and SQL (`azerothcore/azerothcore-wotlk`) to confirm logic and script behaviour — and as a fallback for DB questions when the MCP is down. |
+| **ChromieCraft dev installation** | When explicitly available to the agent, use the private CC dev install as an internal research fallback for source, build, and database checks. It is not a clean upstream AC install, so treat findings as CC-context evidence and cross-check against public AC/CC sources before routing to AC. Never disclose private paths, hostnames, credentials, raw DB access details, or other internal infrastructure in public dossiers; cite public-safe GitHub/source links or summarize as an internal check only when needed. |
 
 ## Process
 
@@ -104,6 +105,7 @@ Run cheapest-decisive-first; parallelize independent checks:
    - `cmangos/*`, `vmangos/*`.
 4. **Web sources** (Wrath-era only — `references/source-quality.md`) — Wowhead ([TBC](http://tbc.wowhead.com/) / [current](https://www.wowhead.com/) filtered to Wrath-era comments), Wowpedia (article History, last revision before Oct 12, 2010). Also evaluate the reporter's own `Official Sources` field here — do not take it at face value.
 5. **AC DB & source** (via MCP, if available) — quote relevant rows / `file:line` in the dossier; highest-value move when available. Deep web (YouTube Wrath-era retail footage, Wayback, MMO-Champion archives) only if still inconclusive — most issues never need it.
+6. **Private CC dev install fallback** (only when available/authorized) — inspect the local CC dev source tree, build artifacts, and database when public tools or MCPs cannot answer the question. Use it to understand behaviour and form better public checks, not as a public citation source. If the dev install materially influenced the verdict, record it in "What I checked" as a private/internal CC dev check and keep the output sanitized.
 
 ### Step 4 — Decide
 
