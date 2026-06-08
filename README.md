@@ -6,6 +6,16 @@ Shared agent skills and tooling for ChromieCraft workflows.
 
 - `skills/triaging` - ChromieCraft bug triage assistant skill, imported from the triage-skill work in `chromiecraft/chromiecraft`.
 
+## AgentWheel
+
+This repository includes `agentwheel.json`, so it can be added as an AgentWheel package:
+
+```bash
+agentwheel add github:chromiecraft/chromiecraft-agent-toolkit --adapter openclaw
+agentwheel update --dry-run
+agentwheel update
+```
+
 ## Notes
 
-This repository is intentionally small for now. AgentWheel-specific manifests or packaging files should be added once the expected consumption format is confirmed.
+This repository is intentionally small for now. Add more artifact folders, such as `instructions/`, `rules/`, `commands/`, `mcp/`, or `hooks/`, only when they are actually needed.
