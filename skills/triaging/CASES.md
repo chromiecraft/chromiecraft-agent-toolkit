@@ -6,7 +6,7 @@ For each case: when it applies, the evidence that justifies it, common false pos
 
 During the routing gate and again after the validity investigation (see SKILL.md "Process"), scan this file for the case your evidence matches. If no case matches cleanly, fall back to one of the `Unclear` verbs.
 
-**The verbs (11):** `Valid — port to AC` · `Valid — port to <mod> repo` · `Valid — report to CC Staff` · `Invalid — duplicate of <link>` · `Invalid — not a bug` · `Invalid — already fixed` · `Invalid — client-side` · `Invalid — out of scope (not a bug report)` · `Unclear — request more info from reporter` · `Unclear — flag for second opinion / staff review` · `Unclear — close as stale (can be reopened)`.
+**The verbs (11):** `Valid — port to AC` · `Valid — port to <mod> repo` · `Valid — report to CC Staff` · `Duplicate — close as duplicate of <link>` · `Invalid — not a bug` · `Invalid — already fixed` · `Invalid — client-side` · `Invalid — out of scope (not a bug report)` · `Unclear — request more info from reporter` · `Unclear — flag for second opinion / staff review` · `Unclear — close as stale (can be reopened)`.
 
 ---
 
@@ -99,11 +99,9 @@ web report template). Apply the `Website` label and flag CC Staff on Discord; do
 
 ---
 
-## Invalid
+## Duplicate
 
-**"Invalid" means "close the CC issue" — not necessarily "the bug isn't real."** Two kinds live here: the report isn't a real problem (`not a bug`, `out of scope`), **or** the bug may well be real but there's nothing further for CC to do (`duplicate` — already tracked on CC; `already fixed` — already resolved; `client-side` — not fixable server-side). Either way, close the CC issue with the reason.
-
-### `Invalid — duplicate of <link>`
+### `Duplicate — close as duplicate of <link>`
 
 **When it applies:** another CC issue already describes the **same problem** (the same underlying bug — not merely the same entity; see false positives), open or recently closed.
 
@@ -111,7 +109,7 @@ web report template). Apply the `Website` label and flag CC Staff on Discord; do
 
 **Evidence that justifies it:** same quest/item/NPC/spell ID **and** same described symptom; reporter phrasing often overlaps with the original, sometimes verbatim.
 
-**Action by the contributor:** close the CC issue, linking the original.
+**Action by the contributor:** apply the `Duplicate` label and close the CC issue, linking the original.
 
 **False positives — do NOT call duplicate when:**
 - Title looks similar but entities differ.
@@ -122,12 +120,18 @@ web report template). Apply the `Website` label and flag CC Staff on Discord; do
 
 **Example snippet:**
 ```
-**Recommendation:** Invalid — duplicate of CC#1100
+**Recommendation:** Duplicate — close as duplicate of CC#1100
 **Confidence:** High
 
 CC#1100 (open, 4 months) reports the same NPC failing the same quest's turn-in with matching
 phrasing. This report adds no new information.
 ```
+
+---
+
+## Invalid
+
+**"Invalid" means "close the CC issue because the report is not actionable as a server bug."** Use it when the report is not a real problem (`not a bug`, `out of scope`), already resolved (`already fixed`), or not fixable server-side (`client-side`). Use the separate `Duplicate` verb for already-tracked CC reports.
 
 ### `Invalid — not a bug`
 

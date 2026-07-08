@@ -97,7 +97,7 @@ When a gate resolves the report cleanly, write the dossier and stop. When a flag
 
 Run cheapest-decisive-first; parallelize independent checks:
 
-1. **CC duplicate search** — `chromiecraft/chromiecraft` issues (open + recently closed) for the extracted entities. Same entities **and** same symptom → `Invalid — duplicate of <link>`.
+1. **CC duplicate search** — `chromiecraft/chromiecraft` issues (open + recently closed) for the extracted entities. Same entities **and** same symptom → `Duplicate — close as duplicate of <link>`.
 2. **AC search** — `azerothcore/azerothcore-wotlk` issues *and* recently merged PRs. Record whether matching AC issues are `Confirmed` or unconfirmed.
    - **Already fixed?** A fix only counts if it's actually live on CC: the fixing PR's merge commit must be an **ancestor of** HEAD of `chromiecraft/azerothcore-wotlk` (not the report's hash, not a merge *date*). Full test in `CASES.md` → `Invalid — already fixed`.
 3. **Other emulators** — same bug is often filed already, sometimes with a fix.
