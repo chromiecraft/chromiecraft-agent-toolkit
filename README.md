@@ -5,6 +5,7 @@ Shared agent skills and tooling for ChromieCraft workflows.
 ## Skills
 
 - `skills/triaging` - ChromieCraft bug triage assistant skill, imported from the triage-skill work in `chromiecraft/chromiecraft`.
+- `skills/skill-feedback-pr-flow` - Skill feedback workflow that routes durable improvements through self-improve, Syncwheel PR delivery, and explicit install timing.
 
 ## AgentWheel
 
